@@ -2,18 +2,18 @@
 
 <h2>Sql injection demo</h2>
 
-<p> This is demo for sql-injection where we will try exploit vulnerabilities of sql queries to acquire the data </p>
-<p>We need a sql database with a table called - "users". The table should have 3 coloums. user_id, name, password. </p>
-<p> The show user query page will be prone to sql injections while secure show user page will prevent such attacks. </p>
+<p> This is demo for sql-injection where we will try exploit vulnerabilities of sql queries to acquire the data.</p>
+<p>We have a SQL database with a table named "users". The table has 3 coloums-user_id, name, password.</p>
+<p> The show user query page will be prone to sql injections while secure show user page will prevent such attacks.</p>
 <p>
 The test cases for application are:
 	<ol>
-		<li>perticular user_id (default or expected input)</li>
-		<li>Enter : 1 OR 1=1</li>
-		<li>Enter : 1 or name="rohan"</li>
-		<li>Enter : 1 or name like '%%'</li>
-		<li>Enter : 1 or user_id between 1 and 10</li>
-		<li>Enter : 1;--</li>
+		<li>Particular user_id (default or expected input)</li>
+		<li>Enter 1 OR 1=1</li>
+		<li>Enter 1 or name="rohit"</li>
+		<li>Enter 1 or name like '%%'</li>
+		<li>Enter 1 or user_id between 1 and 10</li>
+		<li>Enter 1;--</li>
 	</ol>
 </p>
 <p> to prevent sql injections we could use mysql.escape() function </p>
