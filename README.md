@@ -4,6 +4,6 @@ SQL injection is a code injection technique that might destroy your database. It
 ## Overview
 This project demonstrates SQL injection attack and securing the web page from it.
 ## Usage
-``npm run dev``<br>
+Terminal: ``npm run dev``<br>
 Browser: ``localhost``<br>
 Database configuration: ``config.js``
