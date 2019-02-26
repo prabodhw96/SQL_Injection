@@ -1,0 +1,79 @@
+<% include header.ejs%>
+
+<div class="form-group">
+<h2> Secure Show users </h2>
+<form action="/secure-show-user" method="post">
+<label>Enter User_id to search </label>
+<input type="text" name="user_id" class="form-control">
+<br>
+<input type="submit" value="submit" class="btn btn-primary">
+</form>
+<ol>
+<li>Enter perticular user_id from below</li>
+<li>Enter : 1 OR 1=1</li>
+<li>Enter : 1 or name="rohit"</li>
+<li>Enter : 1 or name like '%%'</li>
+<li>Enter : 1 or user_id between 1 and 10</li>
+</ol>
+</div>
+
+<% if(Data.getRequest == true) { %>
+
+  <h2>Table:users</h2>
+	<div>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">user_id</th>
+      <th scope="col">name</th>
+      <th scope="col">password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(var i=0; i<Data.data.length; i++) { %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%=Data.data[i].user_id %></td>
+        <td><%=Data.data[i].name %></td>
+        <td><%=Data.data[i].password %></td>
+      </tr>
+  <%  } %>
+  </tbody>
+</table>
+	</div>
+</div>
+
+<%} else if(Data.postRequest == true) { %>
+
+ <h2>For entered-userID:<%= Data.user_id%></h2>
+	<div>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">user_id</th>
+      <th scope="col">name</th>
+      <th scope="col">password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(var i=0; i<Data.data.length; i++) { %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%=Data.data[i].user_id %></td>
+        <td><%=Data.data[i].name %></td>
+        <td><%=Data.data[i].password %></td>
+      </tr>
+  <%  } %>
+  </tbody>
+</table>
+	</div>
+
+
+<%} else { %>
+<div class="alert alert-danger" role="alert">
+  failed to fetch transactions
+<% }%>
+
+<% include footer.ejs%>
